@@ -1,8 +1,12 @@
 package com.example.devwork.foopon;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import com.mapbox.mapboxsdk.Mapbox;
@@ -13,6 +17,8 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
+import java.security.Permission;
+
 public class MainActivity extends Activity {
     private MapView mapView;
     static String API_KEY = "pk.eyJ1IjoiemFjaGNoZXUiLCJhIjoiY2o1bGtlbzY1MnVueDJ3bnpoZzNpNDltaiJ9.QVTOtZaWnjpXgG0U9nZTeA";
@@ -22,6 +28,16 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, API_KEY);
         setContentView(R.layout.activity_main);
+
+        // Check to see if location permission is granted
+        /*
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_CONTACTS},
+                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+
+        }
+        */
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
 
