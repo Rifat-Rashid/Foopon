@@ -30,15 +30,15 @@ public class MainActivity extends Activity {
             public void onMapReady(MapboxMap mapboxMap) {
                 mapboxMap.setMyLocationEnabled(true);
                 System.out.println(mapboxMap.getMyLocation().getLatitude());
-                /*
+
                 CameraPosition cameraPosition = new CameraPosition.Builder()
                         .target(new LatLng(mapboxMap.getMyLocation()))
                         .zoom(13)
-                        .bearing(180)
-                        .tilt(30)
+                        .bearing(270)
+                        .tilt(20)
                         .build();
                 mapboxMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 5000);
-                */
+
             }
         });
     }
