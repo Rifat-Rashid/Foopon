@@ -1,18 +1,20 @@
 package com.example.devwork.foopon;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private MapView mapView;
+    static String API_KEY = "pk.eyJ1IjoiemFjaGNoZXUiLCJhIjoiY2o1bGtlbzY1MnVueDJ3bnpoZzNpNDltaiJ9.QVTOtZaWnjpXgG0U9nZTeA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Mapbox.getInstance(this, "pk.eyJ1IjoiemFjaGNoZXUiLCJhIjoiY2o1bGtlbzY1MnVueDJ3bnpoZzNpNDltaiJ9.QVTOtZaWnjpXgG0U9nZTeA");
+        Mapbox.getInstance(this, API_KEY);
         setContentView(R.layout.activity_main);
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
