@@ -9,7 +9,7 @@ import com.mapbox.mapboxsdk.maps.MapView;
 
 public class MainActivity extends Activity {
     private MapView mapView;
-    static String API_KEY = "pk.eyJ1IjoiemFjaGNoZXUiLCJhIjoiY2o1bGtlbzY1MnVueDJ3bnpoZzNpNDltaiJ9.QVTOtZaWnjpXgG0U9nZTeA";
+    static String API_KEY = " pk.eyJ1IjoiemFjaGNoZXUiLCJhIjoiY2o1bGtlbzY1MnVueDJ3bnpoZzNpNDltaiJ9.QVTOtZaWnjpXgG0U9nZTeA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
